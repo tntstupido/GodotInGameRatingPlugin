@@ -9,7 +9,12 @@ android/.gradle/
 android/local.properties
 *.aab
 *.apk
+
+# Android plugin build artifacts
+android_plugin/build/
+android_plugin/.gradle/
 *.aar
+!addons/in_game_review/android/*.aar
 
 # iOS
 ios/*.xcworkspace

@@ -17,15 +17,35 @@ class InGameReviewExportPlugin extends EditorExportPlugin:
         return "InGameReview"
 
     func _supports_platform(platform: EditorExportPlatform) -> bool:
-        return _is_ios_platform(platform)
+        return _is_ios_platform(platform) or _is_android_platform(platform)
 
     func _is_ios_platform(platform: EditorExportPlatform) -> bool:
         return platform.get_class().contains("iOS")
 
+    func _is_android_platform(platform: EditorExportPlatform) -> bool:
+        return "Android" in platform.get_class()
+
     func _get_export_options(platform: EditorExportPlatform) -> Array[Dictionary]:
-        return [
-            {
-                "option": {"name": "in_game_review/apple_app_id", "type": TYPE_STRING},
-                "default_value": ""
-            }
-        ]
+        if _is_ios_platform(platform):
+            return [
+                {
+                    "option": {"name": "in_game_review/apple_app_id", "type": TYPE_STRING},
+                    "default_value": ""
+                }
+            ]
+        return []
+
+    func _get_android_libraries(platform: EditorExportPlatform, debug: bool) -> PackedStringArray:
+        if _is_android_platform(platform):
+            return PackedStringArray(["in_game_review/android/in_game_review-release.aar"])
+        return PackedStringArray()
+
+    func _get_android_dependencies(platform: EditorExportPlatform, debug: bool) -> PackedStringArray:
+        if _is_android_platform(platform):
+            return PackedStringArray(["com.google.android.play:review-ktx:2.0.2"])
+        return PackedStringArray()
+
+    func _get_android_dependencies_maven_repos(platform: EditorExportPlatform, debug: bool) -> PackedStringArray:
+        if _is_android_platform(platform):
+            return PackedStringArray(["https://maven.google.com"])
+        return PackedStringArray()
