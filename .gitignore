@@ -16,6 +16,9 @@ ios/*.xcworkspace
 ios/Pods/
 ios/build/
 
+# iOS plugin build artifacts
+ios_plugin/build/
+
 # IDE
 .idea/
 *.iml

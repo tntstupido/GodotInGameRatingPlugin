@@ -1,0 +1,14 @@
+[config]
+name="InGameReview"
+binary="InGameReviewPlugin.xcframework"
+use_swift_runtime=false
+initialization="register_ingamereview_plugin"
+deinitialization="unregister_ingamereview_plugin"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=["StoreKit.framework", "UIKit.framework"]
+capabilities=[]
+files=[]
+linker_flags=[]

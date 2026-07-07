@@ -1,0 +1,13 @@
+; Engine configuration
+config_version=5
+
+[application]
+
+config/name="InGameReview Demo"
+config/description="Demo project for the InGameReview plugin"
+run/main_scene="res://demo.tscn"
+config/features=PackedStringArray("4.5")
+
+[autoload]
+
+InGameReviewBridge="*res://addons/in_game_review/in_game_review.gd"
