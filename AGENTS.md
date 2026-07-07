@@ -15,7 +15,7 @@ Godot 4.5.1 plugin for in-app review via Google Play (Android) and StoreKit (iOS
 
 - **iOS**: Implemented — ObjC++ via GDCLASS, `SKStoreReviewController requestReviewInScene:`, deployment target **15.0** (not 14.0). Registered as `"InGameReview"` singleton via `register_ingamereview_plugin()`/`unregister_ingamereview_plugin()` bootstrap.
 - **Android**: Implemented — Kotlin via Godot v2 plugin, `ReviewManagerFactory.create()` / `requestReviewFlow()` / `launchReviewFlow()`, registered as `"InGameReview"` singleton via `GodotPlugin` base class. Source in `android_plugin/`, AAR goes in `addons/in_game_review/android/`.
-- Missing per spec: `README.md`, `CHANGELOG.md`, `LICENSE`.
+- All deliverables complete per spec: `README.md`, `CHANGELOG.md`, `LICENSE`.
 
 ## iOS Plugin Build
 
