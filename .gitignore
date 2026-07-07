@@ -1,0 +1,28 @@
+# Godot
+.godot/
+*.import
+.*.import
+
+# Android
+android/build/
+android/.gradle/
+android/local.properties
+*.aab
+*.apk
+*.aar
+
+# iOS
+ios/*.xcworkspace
+ios/Pods/
+ios/build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
